@@ -1,0 +1,10 @@
+def solution(n):
+    lst = []
+    
+    for i in str(n):
+        lst.append(int(i))
+    
+    lst.sort(reverse=True)
+    
+    result = int(''.join(map(str, lst)))
+    return result
