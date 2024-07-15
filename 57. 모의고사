@@ -1,0 +1,21 @@
+def solution(answers):
+    answer_score = [0, 0, 0]
+    answer = []
+    
+    arr_1 = [1, 2, 3, 4, 5]
+    arr_2 = [2, 1, 2, 3, 2, 4, 2, 5]
+    arr_3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+    
+    for i in range(len(answers)):
+        if answers[i] == arr_1[i%len(arr_1)]:
+            answer_score[0] += 1
+        if answers[i] == arr_2[i%len(arr_2)]:
+            answer_score[1] += 1
+        if answers[i] == arr_3[i%len(arr_3)]:
+            answer_score[2] += 1
+    
+    for idx, score in enumerate(answer_score):
+           if score == max(answer_score):
+               answer.append(idx+1)
+    
+    return answer
